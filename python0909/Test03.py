@@ -33,11 +33,16 @@ print(a*10)
 d = a*10
 print(d)
 
-#실습
-person1 = int(input("입력1"))
-person2 = int(input("입력2"))
-person3 = int(input("입력3"))
-result = (person1+person2+person3)/3
-print("결과는 %.1f입니다" %result)
+#
+#person1 = int(input("입력1"))
+#person2 = int(input("입력2"))
+#person3 = int(input("입력3"))
+#result = (person1+person2+person3)/3
+#print("결과는 %.1f입니다" %result)
 
+#문자열indexing
+str = "hello"
+print(str[0])
+a = "Global"
+print(a[0])
 
