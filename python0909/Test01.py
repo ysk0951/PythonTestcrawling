@@ -33,3 +33,4 @@ Escape
 print("나이는 %d살이고 이름은 %s입니다" %(10,"pica"))
 print("이름은 %s입니다" %"pica")
 print("키는 %.2f입니다" %200.8)
+print("hello {} 시간입니다 {} testfile" .format("python","열심히"))
