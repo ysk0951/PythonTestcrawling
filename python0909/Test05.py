@@ -8,7 +8,7 @@
     멤버 연산자 : in / not in
     식별 연산자 : is / is not
 '''
-#
+#import
 import datetime
 date = datetime.date.today();
 print(type(date))
