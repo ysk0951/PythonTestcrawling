@@ -46,3 +46,6 @@ print(str[0])
 a = "Global"
 print(a[0])
 
+str = "hello"
+print(str[4]+str[3]+str[2]+str[1]+str[0])
+print(str[-1]+str[-2]+str[-3]+str[-4]+str[0])
