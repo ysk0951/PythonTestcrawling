@@ -10,3 +10,18 @@
 '''
 print("hello python!!!")
 print("hello" , "python")
+
+#option
+print('test1', end=" ")
+print('test2', end=" ")
+print('test'*100)
+print('='*100)
+
+'''
+Escape
+\n
+\t 
+\'
+포맷팅
+
+'''
