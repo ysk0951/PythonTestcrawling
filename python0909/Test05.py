@@ -33,3 +33,27 @@ print(b)
 #문자열 길이 : len()
 str="wetwet234t13dsadeefaefwegwgwerewrafdsf"
 print(len(str))
+
+#문자의 개수 : count()
+print(str.count("s"))
+
+#위치 알려주기
+# find 해당문자없으면 -1
+# index 해당문자없으면 error
+str2 = "global it"
+print(str2.find("o"))
+print(str2.index("o"))
+
+#소문자로 바꾸기 : lower()
+str = "AltoDs"
+str = str.lower()
+print(str)
+str = str.upper()
+print(str)
+
+#공백지우기 : strip(), lstrip(), rstrip()
+str = "        python        "
+print(str)
+print(str.rstrip())
+print(str.lstrip())
+print(str.strip())
