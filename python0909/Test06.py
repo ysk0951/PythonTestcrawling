@@ -20,7 +20,7 @@ print("몫은 {}이고 나머지는 {}입니다" .format(result1,result2))
 min = 1000//60
 sec = 1000%60
 print("1000초는 {}분 {}초 입니다" .format(min,sec))
-'''
+
 #복합대입연산
 num1 = 10
 num2 = 20
@@ -28,3 +28,8 @@ num1 +=10
 num1 -=5
 num1 -=num2
 
+#논리 연산자
+#&&  >>  and
+#||  >>  or
+#! >> not 
+'''
