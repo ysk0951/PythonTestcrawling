@@ -1,3 +1,9 @@
-num = 10
-if num == 10:
-    print("10이다")
+'''
+반목문 while
+
+while True:
+    실행문..
+    if 조건문 : #종료시점
+        break
+'''
+
