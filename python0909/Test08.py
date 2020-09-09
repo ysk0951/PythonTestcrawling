@@ -7,3 +7,14 @@ while True:
         break
 '''
 
+i = 0
+while i<10:
+    print(i)
+    i+=1
+
+# while True:
+#     num = int(input("숫자입력 : "))
+#     print(num)
+#     if num == 0:
+#         break
+
