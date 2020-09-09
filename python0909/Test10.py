@@ -144,13 +144,40 @@
 4단계 : 아이디/패스워드 3번 오류시 프로그램 강제 종료
 추가....
 '''
-
-
-
-
-
-
-
-
-
-
+money = 100000
+select = -1
+result = True
+cookie = False
+dbid = "python"
+dbpw = "1234"
+id = ''
+pw = ''
+while select != 5 or result != True:
+    if not cookie :
+        id =input("id를 입력해주세요")
+        pw =input("pw를 입력해주세요")
+    if id!=dbid or pw!=dbpw:
+        result = False
+        print("로그인에 실패하셨습니다")
+        break
+    else:
+        key = True
+        print('''*** Global ATM ***
+1. 입금
+2. 출금
+3. 잔액조회
+4. 계좌이체
+5. 종료''')
+        select = int(input("메뉴번호를 입력하세요 :"))
+        if select==1:
+            add = int(input("입금액을 입력하세요 :"))
+            money+=add
+        if select==2:
+            sub = int(input("출금액을 입력하세요 :"))
+            money -= sub
+        if select==3:
+            print("잔액은 {} 입니다" .format(money))
+        if select==4:
+            print("계좌이체입니다")
+        if select == 5:
+            print("프로그램을 종료합니다")
