@@ -9,4 +9,5 @@ def signUp(username, pw, name, gender, email, addr, nation="S.Korea"):
     print(addr)
     print(nation)
 
-signUp("global","1234","피카츄","mail","pika@gmail.com","관악구","Korea")
+signUp(username="global",pw="1234",name="피카츄",gender="mail",email="pika@gmail.com"
+       ,addr="관악구",nation="Korea")
