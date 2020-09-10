@@ -148,6 +148,7 @@ money = 100000
 select = -1
 result = True
 cookie = False
+errorcount = 0
 dbid = "python"
 dbpw = "1234"
 id = ''
@@ -158,10 +159,14 @@ while select != 5 or result != True:
         pw =input("pw를 입력해주세요")
     if id!=dbid or pw!=dbpw:
         result = False
+        errorcount += 1
         print("로그인에 실패하셨습니다")
-        break
+        if errorcount == 3:
+            print("로그인에 3번 실패하셨습니다 강제종료합니다")
+            break
     else:
         key = True
+        errorcount = 0
         print('''*** Global ATM ***
 1. 입금
 2. 출금
