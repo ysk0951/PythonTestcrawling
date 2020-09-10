@@ -127,5 +127,37 @@
 #     return min
 # min_(6,3,2,1)
 #Q4 index() 함수 구현
+# def index_(tup_,arg=0):
+#     count=-1
+#     for i in tup_:
+#         if arg==0:
+#             print("error")
+#         if arg!=0:
+#             count = count+1
+#             if i == arg:
+#                 print("index : ", count)
+#                 return count
+# tup = (1,2,3,4,5,6,7)
+# index_(tup,5)
+# tup = ('a','b','c','d')
+# index_(tup,"b")
 #Q5 count() 함수 구현
+# def count_(tup):
+#     count = 0
+#     for i in tup:
+#         count+=1
+#     print("count :",count)
+#     return count
+# tup = (1, 2, 3, 5, 6, 7)
+# count_(tup)
 #Q6 (심화) replace() 함수 구현
+def replace_(tup,target,rep):
+    replace_tuple = tuple()
+    for i in tup:
+        if i == target:
+            i = rep
+        element = i,
+        replace_tuple = replace_tuple + element
+    print(replace_tuple)
+tup = (1, 2, 3, 5, 6, 7)
+replace_(tup,1,"a")
