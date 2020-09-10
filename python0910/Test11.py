@@ -38,24 +38,53 @@
 # lst[0] = 100
 # print(lst)
 
-lst = [1,2,3,4,5]
-lst[1] = ['a','b','c']
-print(lst)
-lst[1:2] = ['a','b','c']
-print(lst)
-lst[1]='a','b','c' #tuple
-print(lst)
-print(lst)
+# lst = [1,2,3,4,5]
+# lst[1] = ['a','b','c']
+# print(lst)
+# lst[1:2] = ['a','b','c']
+# print(lst)
+# lst[1]='a','b','c' #tuple
+# print(lst)
+# print(lst)
 
 #1 요소추가하기 : .append
-lst = []
-lst.append(10)
-lst.append(20)
-print(lst)
+# lst = []
+# lst.append(10)
+# lst.append(20)
+# print(lst)
+
 #2 리스트확장
-lst1 = [1,2,3]
-lst2 = [4,5,6]
-lst1.extend(lst2)
+# lst1 = [1,2,3]
+# lst2 = [4,5,6]
+# lst1.extend(lst2)
 #print(lst1+lst2)와 동일
-print(lst1)
+# print(lst1)
+
 #3. 요소 삽입하기 : insert(a,b) :a번째 위치에 b요소를 삽입
+# lst = [1,2,3]
+# lst.insert(1,4)
+# print(lst)
+
+#4. 요소 제거하기
+# lst.remove(4)
+# print(lst)
+
+#문제1. 임의의 요소 5개 들어있는 리스트 하나 만들고,
+#       인덱스번호 두개 입력받고 해당인덱스 번호에 자리한값을 교환해보자.
+lst_ = [1,2,3,4,5]
+num1 = int(input("0번 인덱스 입력 :"))
+num2 = int(input("1번 인덱스 입력 :"))
+tmp = lst_[num1]
+lst_[num1] = lst_[num2]
+lst_[num2] = tmp
+print(lst_)
+
+# [5,4,3,2,1]로 바꾸기
+lst_ = [1,3,5,2,4]
+lst_.remove(1)
+lst_.remove(2)
+lst_.remove(3)
+lst_.append(3)
+lst_.append(2)
+lst_.append(1)
+print(lst_)
