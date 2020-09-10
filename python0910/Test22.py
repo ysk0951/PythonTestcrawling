@@ -89,67 +89,67 @@
 # print(t1.count(2))
 
 #Q1 sum() 함수 구현
-# def sum_(*num):
-#     tot = 0
-#     value = 0
-#     for i in num:
-#         tot +=i
-#     print("total",tot)
-#     return tot
+def sum_(*num):
+    tot = 0
+    value = 0
+    for i in num:
+        tot +=i
+    print("total",tot)
+    return tot
 #Q2 max() 함수 구현
-# def max_(*num):
-#     value = 0
-#     max = 0
-#     initialize = False
-#     for i in num:
-#         if not initialize:
-#             max = i
-#             initialize = True
-#         if i >= max:
-#             print(i,"가 기존의 최대값인 ",max,"보다 크거나 같습니다")
-#             max = i
-#     print("max",max)
-#     return max
-# max_(1,2,3,6)
+def max_(*num):
+    value = 0
+    max = 0
+    initialize = False
+    for i in num:
+        if not initialize:
+            max = i
+            initialize = True
+        if i >= max:
+            # print(i,"가 기존의 최대값인 ",max,"보다 크거나 같습니다")
+            max = i
+    print("max",max)
+    return max
+max_(1,2,3,6)
 #Q3 min() 함수 구현
-# def min_(*num):
-#     value = 0
-#     min = 0
-#     initialize = False
-#     for i in num:
-#         if not initialize:
-#             min = i
-#             initialize = True
-#         if i <= min:
-#             print(i,"가 기존의 최대값인 ",min,"보다 작거나 같습니다")
-#             min = i
-#     print("max",min)
-#     return min
-# min_(6,3,2,1)
+def min_(*num):
+    value = 0
+    min = 0
+    initialize = False
+    for i in num:
+        if not initialize:
+            min = i
+            initialize = True
+        if i <= min:
+            # print(i,"가 기존의 최대값인 ",min,"보다 작거나 같습니다")
+            min = i
+    print("max",min)
+    return min
+min_(6,3,2,1)
 #Q4 index() 함수 구현
-# def index_(tup_,arg=0):
-#     count=-1
-#     for i in tup_:
-#         if arg==0:
-#             print("error")
-#         if arg!=0:
-#             count = count+1
-#             if i == arg:
-#                 print("index : ", count)
-#                 return count
+def index_(tup_,arg=0):
+    count=-1
+    for i in tup_:
+        if arg==0:
+            print("error")
+        if arg!=0:
+            count = count+1
+            if i == arg:
+                print("index : ", count)
+                return count
 # tup = (1,2,3,4,5,6,7)
 # index_(tup,5)
-# tup = ('a','b','c','d')
-# index_(tup,"b")
+tup = ('a','b','c','d')
+index_(tup,"b")
 #Q5 count() 함수 구현
-# def count_(tup):
-#     count = 0
-#     for i in tup:
-#         count+=1
-#     print("count :",count)
-#     return count
-# tup = (1, 2, 3, 5, 6, 7)
-# count_(tup)
+def count_(tup):
+    count = 0
+    for i in tup:
+        count+=1
+    print("count :",count)
+    return count
+tup = (1, 2, 3, 5, 6, 7)
+count_(tup)
 #Q6 (심화) replace() 함수 구현
 def replace_(tup,target,rep):
     replace_tuple = tuple()
