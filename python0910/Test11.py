@@ -71,20 +71,25 @@
 
 #문제1. 임의의 요소 5개 들어있는 리스트 하나 만들고,
 #       인덱스번호 두개 입력받고 해당인덱스 번호에 자리한값을 교환해보자.
-lst_ = [1,2,3,4,5]
-num1 = int(input("0번 인덱스 입력 :"))
-num2 = int(input("1번 인덱스 입력 :"))
-tmp = lst_[num1]
-lst_[num1] = lst_[num2]
-lst_[num2] = tmp
-print(lst_)
+# lst_ = [1,2,3,4,5]
+# num1 = int(input("0번 인덱스 입력 :"))
+# num2 = int(input("1번 인덱스 입력 :"))
+# tmp = lst_[num1]
+# lst_[num1] = lst_[num2]
+# lst_[num2] = tmp
+# print(lst_)
 
 # [5,4,3,2,1]로 바꾸기
-lst_ = [1,3,5,2,4]
-lst_.remove(1)
-lst_.remove(2)
-lst_.remove(3)
-lst_.append(3)
-lst_.append(2)
-lst_.append(1)
-print(lst_)
+# lst_ = [1,3,5,2,4]
+# lst_.sort()
+# lst_.reverse()
+# print(lst_)
+
+# in / not in
+# lst = [10,20,30,'abc','def']
+# if 10 in lst :
+#     print("10이 존재한다")
+# print("abc" not in lst)
+#
+# lst = [0]*5
+# print(lst)
