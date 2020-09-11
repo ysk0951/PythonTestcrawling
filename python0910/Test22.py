@@ -159,5 +159,23 @@ def replace_(tup,target,rep):
         element = i,
         replace_tuple = replace_tuple + element
     print(replace_tuple)
-tup = (1, 2, 3, 5, 6, 7)
+tup = (1, 2, 3, 5, 1, 7)
 replace_(tup,1,"a")
+
+def my_replace(str,old,new):
+    newStr = ""
+    for i in range(len(str)):
+        dSliced = str[i:len(old)+i]
+        if dSliced == old:
+            #앞부분 킵하기
+            frontKeep = str[:i]
+            print("front : ",frontKeep)
+            #뒷부분 킵하기
+            backKepp = str[i+len(old):]
+            print("back : ",backKepp)
+            # 앞 + new + 뒤
+            str = frontKeep + new + backKepp
+            print("newStr : ",str)
+
+str = "hellohello python"
+my_replace(str,"hello","test")
