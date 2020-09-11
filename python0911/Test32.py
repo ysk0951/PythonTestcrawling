@@ -16,4 +16,14 @@ def packer(name,**kwargs):
     print(kwargs.values())
     print(kwargs.items())
 
-packer("pika",age=30,mobile="010-1234-4567",city="Seoul")
+# packer("pika",age=30,mobile="010-1234-4567",city="Seoul")
+
+def unpacker(name=None,score=0) :
+    print("%s의 점수는 %d점 입니다." %(name,score))
+    #data 있으면 True취급
+    # if name :
+    #     print("%s의 점수는 %d점 입니다." %(name,score))
+    # else :
+    #     print("이름 또는 점수가 없습니다.")
+
+unpacker(**{"score" : 100, "name":"pika"})
