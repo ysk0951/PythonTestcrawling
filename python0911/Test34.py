@@ -14,3 +14,18 @@ s2 = set([3,6,8,9])
 #교집합
 print(s1 & s2)
 print(s1.intersection(s2))
+#차집합
+print(s1-s2)
+print(s1.difference(s2))
+print(s2-s1)
+print(s2.difference(s1))
+
+#추가하기
+s3 = set([1,2,3])
+print(s3)
+s3.add(100)
+print(s3)
+
+#삭제하기
+s3.remove(100)
+print(s3)
