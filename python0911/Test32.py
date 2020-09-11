@@ -10,3 +10,10 @@
     초기화 파라미터전에 와야함
     **kwargs << a=10 , b=20, play=True,lst=[1,2,3,4,5]
 '''
+def packer(name,**kwargs):
+    print(name)
+    print(kwargs.keys())
+    print(kwargs.values())
+    print(kwargs.items())
+
+packer("pika",age=30,mobile="010-1234-4567",city="Seoul")
