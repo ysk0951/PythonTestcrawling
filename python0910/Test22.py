@@ -164,18 +164,14 @@ replace_(tup,1,"a")
 
 def my_replace(str,old,new):
     newStr = ""
-    for i in range(len(str)):
-        dSliced = str[i:len(old)+i]
-        if dSliced == old:
-            #앞부분 킵하기
-            frontKeep = str[:i]
-            print("front : ",frontKeep)
-            #뒷부분 킵하기
-            backKepp = str[i+len(old):]
-            print("back : ",backKepp)
-            # 앞 + new + 뒤
-            str = frontKeep + new + backKepp
-            print("newStr : ",str)
+    step = len(old)
+    datalen = len(str)
+    for ii in range(0,datalen,step):
+        if str[ii:ii+step] == old:
+            newStr += new
+        else:
+            newStr += str[ii:ii+step]
+    return newStr
 
 str = "hellohello python"
 my_replace(str,"hello","test")
