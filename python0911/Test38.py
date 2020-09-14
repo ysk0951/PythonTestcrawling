@@ -35,6 +35,7 @@ p1.display()
 p2 = Payment(5000,3)
 p2.calculator()
 p2.display()
+p2.update(5)
 
 '''
 파이썬은 생성된 인스턴스에서 클래스함수에 접근할수있다는것이 특징이다.
