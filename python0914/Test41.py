@@ -12,5 +12,10 @@ class Student(Person):
         super().__init__(name,age)
         self.number = number
 
+    def showInfo(self):
+        print("자식")
+        super().showInfo()
+        print("학번 : ",self.number)
+
 s = Student("pika",10,2020123)
 s.showInfo()
