@@ -36,5 +36,12 @@ except error:
 
 def func():
     num =int(input("1~5 사이 정수 입력 :"))
-    print(num)
+    if num >5 or num < 1:
+        raise ValueError
+    else :
+        print(num)
 
+try:
+    func()
+except:
+    print("예외처리")
