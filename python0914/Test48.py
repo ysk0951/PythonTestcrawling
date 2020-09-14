@@ -27,3 +27,7 @@ sleep()
 #PythonPath 환경변수에 지정된 디렉토리에서 찾음
 #Python Lib에서 디렉토리를 찾음
 '''
+
+from tkinter import *
+
+mainloop()
