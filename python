@@ -7,3 +7,16 @@ Python
 
     함수
     def
+
+    class 클래스명 :
+        변수 메서드드
+        # 전역 변수 : Test.a
+        # 생성자
+        def __init__(self):
+            print()
+        # 매서드
+        def info(self)
+            pinrt(self.num) #인스턴스 변수 출력
+
+        #전역 변수
+
