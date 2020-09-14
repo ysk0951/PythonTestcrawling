@@ -34,14 +34,13 @@ except error:
 #     print("index Error =",end=" ")
 #     print(e)
 
-def func():
-    num =int(input("1~5 사이 정수 입력 :"))
-    if num >5 or num < 1:
-        raise ValueError
-    else :
-        print(num)
-
-try:
-    func()
-except:
-    print("예외처리")
+# def func():
+#     try:
+#         num =int(input("1~5 사이 정수 입력 :"))
+#         if num >5 or num < 1:
+#             raise ValueError
+#         else :
+#             print(num)
+#     except:
+#         print("예외처리")
+# func()
