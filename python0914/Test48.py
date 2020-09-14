@@ -49,8 +49,14 @@ sleep()
         E W S N SW SE NW NE
 '''
 from tkinter import *
+# 컨테이너
 
 window = Tk()
+# 컴포넌트
 b1 = Button(window, text="one")
-b1.pack()
+b2 = Button(window, text="two")
+# 배치관리자
+b1.pack(side=LEFT,fill=BOTH,padx=10,pady=5,expand=YES)
+b2.pack(side=RIGHT,fill=BOTH,padx=10,pady=5,expand=YES)
+# 계속 이벤트 리스닝
 window.mainloop()
