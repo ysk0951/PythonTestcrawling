@@ -14,16 +14,28 @@ data = soup.select('ul.type06_headline>li>dl>dt:nth-child(2)>a')
 #네이버 웹툰 요일별 리스트 + 썸네일(저장 > urlretrieve)
 url = "https://comic.naver.com/webtoon/weekday.nhn"
 res = requests.get(url)
-soup = BeautifulSoup(res.content,'lxml')
-data = soup.select(".title")
-day = soup.select(".col_inner")
-lst = []
+# soup = BeautifulSoup(res.content,'lxml')
+# data = soup.select(".title")
+# day = soup.select(".col_inner")
 # for i in day :
-#     print(i.text)
+#     # soup.select()
+#     print(i.text.strip())
 #     print("=" * 30)
-for i in data :
-    print(i.text.strip())
 
+# for i in data :
+#     print(i.text.strip())
+
+soup = BeautifulSoup(res.content,"lxml")
+dataByday = soup.select(".title")
+for i in dataByday:
+    print(i.attrs['href']-i.attrs['href'][:-3])
+# print(dataByday)
+
+
+
+# for ii in i:
+#     print(ii)
+# print(i+1,":",data[i].text.strip())
 
 
 #네이버 미세먼지
