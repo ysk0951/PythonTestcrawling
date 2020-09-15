@@ -44,25 +44,25 @@ html = '''<!DOCTYPE html>
 </html>'''
 #parsing
 soup = BeautifulSoup(html,'lxml')
-print(soup)
-print(type(soup))
-print("="*40)
+# print(soup)
+# print(type(soup))
+# print("="*40)
 
 #1. 간단한 태그 접근
 title = soup.title
 p = soup.body
-print(title,                        # 태그전체
-      "\ntype=",type(title),        # 태그의 타입
-      "\ntext=",title.text,         # 태그의 내부텍스트와 하위태그포함
-      "\nStringType=",title.string) # 태그의 내부텍스트중의 값
-print(p)
+# print(title,                        # 태그전체
+#       "\ntype=",type(title),        # 태그의 타입
+#       "\ntext=",title.text,         # 태그의 내부텍스트와 하위태그포함
+#       "\nStringType=",title.string) # 태그의 내부텍스트중의 값
+# print(p)
 
 #2. 태그의 속성접근
-soup = BeautifulSoup(html,'lxml')
-t_tag = soup.title
-print(t_tag.attrs) # class >> list
-print(t_tag['class']) # dictionary에서 key로 value꺼내기 - 없으면  Error
-print(t_tag.get('class')) # dictionary에서 key로 value꺼내기 - 없을시 None
+# soup = BeautifulSoup(html,'lxml')
+# t_tag = soup.title
+# print(t_tag.attrs) # class >> list
+# print(t_tag['class']) # dictionary에서 key로 value꺼내기 - 없으면  Error
+# print(t_tag.get('class')) # dictionary에서 key로 value꺼내기 - 없을시 None
 
 html = '''<!DOCTYPE html>
 <html lang="en">
@@ -75,12 +75,28 @@ html = '''<!DOCTYPE html>
 </body>
 </html>'''
 soup = BeautifulSoup(html,'lxml')
-p_tag = soup.p
-
-text_data = p_tag.text
-string_data = p_tag.string
-
-print("text : ",text_data,type(text_data)) # 자식포함
-print("string : ",string_data,type(string_data)) # 바로밑에만 읽기
+# p_tag = soup.p
+#
+# text_data = p_tag.text
+# string_data = p_tag.string
+#
+# print("text : ",text_data,type(text_data)) # 자식포함
+# print("string : ",string_data,type(string_data)) # 바로밑에만 읽기
 #-----------------------------------------------------------------------------------
+p_tag_c = soup.p.contents
+print("tag_c",p_tag_c)
+
+p_tag_ch = soup.p.children
+print("tag_ch",p_tag_ch)
+for child in p_tag_ch:
+      print(child)
+
+#부모태그 접근
+span_tag = soup.span
+print(span_tag)
+print(span_tag.parent)
+print("="*50)
+parents = span_tag.parents
+for p in parents:
+      print(p)
 
