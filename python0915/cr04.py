@@ -184,7 +184,26 @@ soup = BeautifulSoup(html,'lxml')
 # ps = body[0].find_all('p')
 # print(ps)
 
-#find()
-print(soup.find_all('p')[0])
+# find()
+# print(soup.find('body').find('p',class_='b'))
+# select()
+html = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test Title</title>
+</head>
+<body>
+    <p class = 'a' id='i'>1111</p>
+    <p class ='b'>2222</p>
+    <p class ='b'>3333</p>
+    <a href="/test/test01">a tag</a>
+    <b> b tag </b>
+</body>
+</html>'''
+soup = BeautifulSoup(html,'lxml')
+print(soup.select('p'))
+print(soup.select('.b'))
+print(soup.select("p#i"))
 
 
