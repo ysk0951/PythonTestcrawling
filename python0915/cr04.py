@@ -178,9 +178,13 @@ soup = BeautifulSoup(html,'lxml')
 # print(soup.find_all('p',limit=4))#검색양 제한하기
 # print(soup.find_all())#모든태그 가져오기
 # print(soup.find_all(['title','p']))#태그 여러개
-# body = soup.find_all('body') #여러번 거르기
+# 여러번 거르기
+# body = soup.find_all('body')
 # print(body)
 # ps = body[0].find_all('p')
 # print(ps)
+
+#find()
+print(soup.find_all('p')[0])
 
 
