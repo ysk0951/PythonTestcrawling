@@ -34,7 +34,7 @@ html = '''<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>test Title</title>
+    <title class="t" id="tid">test Title</title>
 </head>
 <body>
     <p>1111</p>
@@ -47,7 +47,8 @@ soup = BeautifulSoup(html,'lxml')
 print(soup)
 print(type(soup))
 print("="*40)
-#간단한 태그 접근
+
+#1. 간단한 태그 접근
 title = soup.title
 p = soup.body
 print(title,                        # 태그전체
@@ -56,3 +57,9 @@ print(title,                        # 태그전체
       "\nStringType=",title.string) # 태그의 내부텍스트중의 값
 print(p)
 
+#2. 태그의 속성접근
+soup = BeautifulSoup(html,'lxml')
+t_tag = soup.title
+print(t_tag.attrs) # class >> list
+print(t_tag['class']) # dictionary에서 key로 value꺼내기 - 없으면  Error
+print(t_tag.get('class')) # dictionary에서 key로 value꺼내기 - 없을시 None
