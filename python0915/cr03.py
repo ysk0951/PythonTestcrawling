@@ -38,3 +38,23 @@ print(dict(res.headers))
 import json
 res = requests.post(url,data=json.dumps({"key1":"value1","key2":"value2"}))
 print(res.headers)
+
+'''
+request 예외처리
+HTTPError
+connectionError
+ProxyError
+SSLError
+Timeout
+ConnectTimeout
+URLRequired
+TooManyRedirect
+MissingSchema
+InvalidURL
+ContentDecodingError
+RetryError
+
+try:
+except request.exeptions.HttpError :
+
+'''
