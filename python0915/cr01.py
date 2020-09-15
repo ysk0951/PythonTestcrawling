@@ -76,3 +76,8 @@ print(page.url)
 
 #파일다운로드
 from urllib.request import urlretrieve
+url = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+#저장할 이미지 경로 + 이름 : 파일 확장자 동일하게
+name = "googleLogo.png"
+#다운받기 : urlretrleve(다운받을데이터의 url, 저장할 파일경로_
+urlretrieve(url,name)
