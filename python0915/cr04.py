@@ -162,12 +162,25 @@ html = '''<!DOCTYPE html>
     <title class="t a b" id="tid">test Title</title>
 </head>
 <body>
-    <p>1111</p>
+    <p class = 'a'>1111</p>
     <p id="a">2222</p>
-    <p>3333</p>
+    <p class = 'b'>3333</p>
 </body>
 </html>'''
 soup = BeautifulSoup(html,'lxml')
-print(soup.find_all('p'))     #태그명으로 가져오기
-print(soup.find_all(id='a'))  #id로 가져오기
+# print(soup.find_all('p'))     #태그명으로 가져오기
+# print(soup.find_all(id='a'))  #id로 가져오기
+# print(soup.find_all(id=True)) #속성존재여부로 가져오기
+# print(soup.find_all(id=False))
+# print(soup.find_all('p',id='a'))
+# print(soup.find_all('p',class_='a'))#태그, class 속성 두개 지정해서 찾기
+# print(soup.find_all('p',text='1111'))#text로 찾기
+# print(soup.find_all('p',limit=4))#검색양 제한하기
+# print(soup.find_all())#모든태그 가져오기
+# print(soup.find_all(['title','p']))#태그 여러개
+# body = soup.find_all('body') #여러번 거르기
+# print(body)
+# ps = body[0].find_all('p')
+# print(ps)
+
 
