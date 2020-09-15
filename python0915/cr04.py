@@ -18,15 +18,41 @@ BeautifulSoup
 """
 from bs4 import BeautifulSoup
 
-html = """<p>test</p>"""
-print(html)
-print(type(html))
-print("="*40)
-soup = BeautifulSoup(html,"lxml")
+# html = """<p>test</p>"""
+# print(html)
+# print(type(html))
+# print("="*40)
+# soup = BeautifulSoup(html,"lxml")
+# print(soup)
+# print(type(soup))
+# print("="*40)
+# soup = BeautifulSoup(html,"html.parser")
+# print(soup)
+# print(type(soup))
+
+html = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test Title</title>
+</head>
+<body>
+    <p>1111</p>
+    <p>2222</p>
+    <p>3333</p>
+</body>
+</html>'''
+#parsing
+soup = BeautifulSoup(html,'lxml')
 print(soup)
 print(type(soup))
 print("="*40)
-soup = BeautifulSoup(html,"html.parser")
-print(soup)
-print(type(soup))
+#간단한 태그 접근
+title = soup.title
+p = soup.body
+print(title,                        # 태그전체
+      "\ntype=",type(title),        # 태그의 타입
+      "\ntext=",title.text,         # 태그의 내부텍스트와 하위태그포함
+      "\nStringType=",title.string) # 태그의 내부텍스트중의 값
+print(p)
 
