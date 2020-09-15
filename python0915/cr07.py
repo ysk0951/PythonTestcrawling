@@ -28,7 +28,8 @@ res = requests.get(url)
 soup = BeautifulSoup(res.content,"lxml")
 dataByday = soup.select(".title")
 for i in dataByday:
-    print(i.attrs['href']-i.attrs['href'][:-3])
+    day = i.attrs['href'][-3:]
+    print(i.attrs['href'][-3:])
 # print(dataByday)
 
 
