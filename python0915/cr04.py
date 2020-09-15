@@ -34,7 +34,7 @@ html = '''<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title class="t" id="tid">test Title</title>
+    <title class="t a b" id="tid">test Title</title>
 </head>
 <body>
     <p>1111</p>
@@ -63,3 +63,24 @@ t_tag = soup.title
 print(t_tag.attrs) # class >> list
 print(t_tag['class']) # dictionary에서 key로 value꺼내기 - 없으면  Error
 print(t_tag.get('class')) # dictionary에서 key로 value꺼내기 - 없을시 None
+
+html = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title class="t a b" id="tid">test Title</title>
+</head>
+<body>
+    <p><span>1111</<span><span>2222</<span></p>
+</body>
+</html>'''
+soup = BeautifulSoup(html,'lxml')
+p_tag = soup.p
+
+text_data = p_tag.text
+string_data = p_tag.string
+
+print("text : ",text_data,type(text_data)) # 자식포함
+print("string : ",string_data,type(string_data)) # 바로밑에만 읽기
+#-----------------------------------------------------------------------------------
+
