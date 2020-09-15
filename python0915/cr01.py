@@ -32,4 +32,19 @@ D > Delete
 HTML : 문서구조, 내용물을 넣기위한 언어
 CSS : 문서에 디자인을 추가 하기 위한 언어
 Javascript : 웹페이지에 기능을 추가 위한 언어(동적 효과)
+
+##라이브러리
+urllib : URL을 다루는 모듈패키지
+    HTTP FTP 를 사용하여 데이터 다운가능
+    urllib,request모듈은 웹사이트에 있는 데이터 접근하느 ㄴ기능을 제공함
+    인증, 리다이렉트, 쿠키 같은 요청과 처리를 지원
 '''
+
+#라이브러리 임포트
+from urllib.request import Request,urlopen
+#요청
+url = "https://www.naver.com"
+req = Request(url)
+page = urlopen(req)
+#응답결과 출력
+print(page)
