@@ -15,5 +15,16 @@ R > Get
 U > Put
 D > Delete
 
+#Header
+요청헤더 : 클라이언트 -> 서버 요청할때 정보 포함된 헤더
+    User-Agent(브라우저 정보),Method(요청 메서드),refered(요청 이전에 머물렀던 정보)
+응답헤더 : 서버 -> 클라이언트 헤더
+    Status-code(응답 코드)
+일반헤더 : 양측에서 모두 사용되는 일반 정보 포함한 헤더
+엔티티 : 메세지에 해당하는 정보를 포함한 헤더
+        Content - type(entity-body의 미디어 타입)
+
+#데이터 전송
+리소스 경로 : REST API
 
 '''
