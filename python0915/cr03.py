@@ -27,17 +27,17 @@ res = requests.get(url)
 #.get()
 #쿼리스트링 만들어 요청
 res = requests.get(url,params={"key1":"value1","key2":"value2"})
-print(res.url)
+# print(res.url)
 
 #.post()
 # post는 body에 인자 셋팅
 res = requests.post(url,data={"key1":"value1","key2":"value2"})
-print(res.url)
-print(dict(res.headers))
+# print(res.url)
+# print(dict(res.headers))
 
 import json
 res = requests.post(url,data=json.dumps({"key1":"value1","key2":"value2"}))
-print(res.headers)
+# print(res.headers)
 
 '''
 request 예외처리
@@ -58,3 +58,14 @@ try:
 except request.exeptions.HttpError :
 
 '''
+import requests
+try:
+    url = "naver.com/test"
+    res = requests.get(url)
+    print(res.url)
+except requests.exceptions.HTTPError:
+    print("Http Error")
+except requests.exceptions.Timeout:
+    print("timeout Error")
+except requests.exceptions.MissingSchema:
+    print("Missint schema Error")
