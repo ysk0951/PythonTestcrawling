@@ -47,4 +47,32 @@ url = "https://www.naver.com"
 req = Request(url)
 page = urlopen(req)
 #응답결과 출력
+# print(page)
+# print(page.code)
+# print("="*50)
+# print(page.headers)
+# print("="*50)
+# print(page.url)
+# print(page.info().get_content_charset())
+# print("="*50)
+#html 꺼내기 : read() 함수 이용, html을 바이너리 형태로 가져옴
+# print(page.read())
+
+#Post요청
+import urllib
+data = {"key1":"value1","key2":"value2"}
+data = urllib.parse.urlencode(data)#딕셔너리를 쿼리스트링 형태로 변환
+data = data.encode("utf-8")
+req_post = Request(url,data=data,headers={})
+page = urlopen(req_post)
 print(page)
+print(page.url)
+
+#Get요청
+req_get = Request(url+"?key1=value1&key2=value2",None,headers={})
+page = urlopen(req_get)
+print(page)
+print(page.url)
+
+#파일다운로드
+from urllib.request import urlretrieve
