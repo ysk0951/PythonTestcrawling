@@ -31,3 +31,10 @@ print(res.url)
 
 #.post()
 # post는 body에 인자 셋팅
+res = requests.post(url,data={"key1":"value1","key2":"value2"})
+print(res.url)
+print(dict(res.headers))
+
+import json
+res = requests.post(url,data=json.dumps({"key1":"value1","key2":"value2"}))
+print(res.headers)
