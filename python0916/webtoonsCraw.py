@@ -2,6 +2,10 @@
 
 import requests
 from bs4 import BeautifulSoup
+from urllib.request import urlretrieve
+import os,errno, re
+
+
 
 url = "https://comic.naver.com/webtoon/weekday.nhn"
 html = requests.get(url)
@@ -25,23 +29,32 @@ data = soup.find_all('div',{'class':'col_inner'}) #기둥
 daily_title = []
 daily_img = []
 
+try:
+    if not (os.path.isdir('image')):
+        os.makedirs(os.path.join('image'))
+except OSError as e:
+    if e.error != errno.EEXIST:
+        print("폴더생성 실패")
+        exit()
+
 for i in data :
     img_tags = i.find_all('img')
     title_list = []
     img_list=[]
     for j in img_tags:
-        title_list.append(j.get('title'))
+        title = re.sub('[^0-9a-zA-Z가-힣]','', j.get('title'))
+        title_list.append(title)
         img_list.append(j.get('src'))
+        urlretrieve(j.get('src'),'image/'+title+'.jpg')
     daily_title.append(title_list)
     daily_img.append(img_list)
 
-print(daily_title)
-print(daily_img)
+# print(daily_title)
+# print(daily_img)
 
 
 #썸네일 이미지 저장
-from urllib.request import urlretrieve
-import os,errno, re
+
 #저장할 폴더 생성
 '''
 OS 에서 작업해야할 경우
@@ -52,12 +65,7 @@ os.path.join : 현재 경로를 계산하여 입력으로 들어온
 os.makedirs : 경로에 폴더생성
 
 '''
-try:
-    if not (os.path.isdir('image')):
-        os.makedirs(os.path.join('image'))
-except OSError as e:
-    if e.error != errno.EEXIST:
-        print("폴더생성 실패")
-        exit()
+
+
 
 
