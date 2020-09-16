@@ -5,7 +5,7 @@
 
 '''
 from selenium import webdriver
-
+from selenium.webdriver.common.keys import Keys
 #드라이버 경로
 driver = webdriver.Chrome('chromedriver.exe')
 #webdriver.Ie('IEDriverServer.exe')
@@ -58,5 +58,23 @@ url = "https://www.youtube.com/"
 driver.get(url)
 driver.implicitly_wait(3)
 
-search = driver.find_element_by_id('search')
-search.send_keys()
+search = driver.find_element_by_xpath('//input[@id="search"]')
+driver.implicitly_wait(3)
+search.send_keys('펭수')#검색할 키워드 던지기
+search.send_keys(Keys.ENTER)
+driver.implicitly_wait(3)
+# #more > yt-formatted-string 더보기 클릭하여 펼치기
+more = driver.find_element_by_css_selector('#more > yt-formatted-string')
+more.click()
+
+#타이틀
+# #video-title > yt-formatted-string
+# titles = driver.find_elements_by_css_selector('#video-title > yt-formatted-string')
+# for t in titles:
+#     print(t.text)
+
+#동영상 링크
+# #thumbnail
+thumbnails = driver.find_elements_by_css_selector("#thumbnail")
+for thumb in thumbnails:
+    print(thumb.get_attribute('href'))
