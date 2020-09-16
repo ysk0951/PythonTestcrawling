@@ -46,36 +46,36 @@ soup = BeautifulSoup(html.content,"lxml")
 # data= soup.find('dd',class_='lv1')
 # print(data.text)
 
-data = soup.find('dl',class_='indicator')
-print(data.prettify())
-dt = data.find_all('dt')
-
-for d in dt:
-    print(d.text)
-    # dt_list.append(d.text)
-
-find_dust= []
-span = data.find_all('span',{'class':'num'})
-for s in span:
-    print(s.text)
-
-dd= data.find_all('dd',class_='lv1')
-for d in dd:
-    print(d.text)
-dt_list=[]
-find_dust= []
-find_dust_status = []
-span = data.find_all('span',{'class':'num'})
-for s in span:
-    find_dust.append(s.text)
-    find_dust_status.append(s.next_sibling)
-
-for i in range(3):
-    print(dt_list[i],"=",find_dust[i],find_dust_status[i])
-
-with open('findDust.txt','w',encoding="utf-8") as file:
-    for i in range(3):
-        str = dt_list[i]+"="+find_dust(i)+find_dust_status(i)+"\n"
-        file.write(str)
+# data = soup.find('dl',class_='indicator')
+# print(data.prettify())
+# dt = data.find_all('dt')
+#
+# for d in dt:
+#     print(d.text)
+#     # dt_list.append(d.text)
+#
+# find_dust= []
+# span = data.find_all('span',{'class':'num'})
+# for s in span:
+#     print(s.text)
+#
+# dd= data.find_all('dd',class_='lv1')
+# for d in dd:
+#     print(d.text)
+# dt_list=[]
+# find_dust= []
+# find_dust_status = []
+# span = data.find_all('span',{'class':'num'})
+# for s in span:
+#     find_dust.append(s.text)
+#     find_dust_status.append(s.next_sibling)
+#
+# for i in range(3):
+#     print(dt_list[i],"=",find_dust[i],find_dust_status[i])
+#
+# with open('findDust.txt','w') as file:
+#     for i in range(3):
+#         str = dt_list[i]+"="+find_dust[i]+find_dust_status[i]
+#         file.write(str)
 
 
