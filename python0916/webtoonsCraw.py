@@ -57,5 +57,7 @@ try:
         os.makedirs(os.path.join('image'))
 except OSError as e:
     if e.error != errno.EEXIST:
+        print("폴더생성 실패")
+        exit()
 
 
