@@ -49,4 +49,4 @@ for i in range(1,21):
     #<button jstcache="1388" ved="1i:1,t:10452,e:0,p:BcFhX5WiE-Tv9APJpKToAw:380" jsaction="pane.place.backToList" class="section-back-to-list-button blue-link noprint" jsan="t-MoXyWTerhiw,7.section-back-to-list-button,7.blue-link,7.noprint,0.ved,0.jsaction"> <span jstcache="892">검색결과로 돌아가기</span> </button>
     back_btn = driver.find_element_by_xpath('//button[@jsaction="pane.place.backToList"]')
     back_btn.click()
-
+    #뒤로가기 = dirver.back()
