@@ -1,107 +1,61 @@
-'''
-정규 표현식 파이썬 모듈 re
-사용방법
-1) 패턴 만들기
-2) 패턴 이용하여 match(문자열),search(문자열)
-            ,findall(문자열),finditer(문자열)로 활용
-3) 위에서 받은 결과물을 group(),start(),end(),span()을 이용해서 리턴
-'''
-html = '''<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>tes Title</title>
-</head>
-<body>
-    <p id = "i" class="a">111</p>
-    <p class="b">222</p>
-    <p class="b">333</p>
-    <a href="/test/test01">a tag</a>
-    <b>b tag</b>
-</body>
-</html>
-'''
-import re
+# 네이버 웹툰 긁기
+
 import requests
 from bs4 import BeautifulSoup
 
-soup = BeautifulSoup(html,'lxml')
-# re.compile('정규표현식') : 패턴을 만들어줌
-# find_all(태그명), find_all(class="값"), find_all(id='값')
-# print(soup.find_all(class_=re.compile('a')))
-# print(soup.find_all(id=re.compile('i')))
-# print(soup.find_all(re.compile('t'))) #t가 포함된 태그
-# print(soup.find_all(re.compile('^t'))) #t로 시작하는 태그
-# print(soup.find_all(href=re.compile('/'))) #/가 들어간 하이퍼링크
+url = "https://comic.naver.com/webtoon/weekday.nhn"
+html = requests.get(url)
+soup = BeautifulSoup(html.text,'lxml')
 
-str = "test fefwef f test1"
-pattern = re.compile('test') #패턴 만들기
-a = pattern.match(str) #패턴에 맞는 형태 추출
-# print(a) # 첫번째 찾음
-# print(a.group()) # 찾은 결과
-# print(a.start()) # 찾은 단어 시작 인덱스번호
-# print(a.end()) # 찾은 단어 끝 인덱스 +1
+# data = soup.find('div',{'class':'col_inner'}) # 월요일 기둥
+# img_tag = data.find_all('img') #월요일의 모든 이미지 태그
+# print(len(img_tag))            #월요일 만화갯수
 
-b = pattern.search(str)
-# print(b)
-# print(b.group())
-# print(b.start())
-# print(b.end())
-
-# c = pattern.findall(str)
-# print(c)
-# for i in c:
-#     print(i)
+# mon_title_list = []
+# mon_img_list = []
+# for i in img_tag:
+#     mon_title_list.append(i.get('title'))
+#     mon_img_list.append(i.get('src'))
 #
-# d = pattern.finditer(str)
-# for i in d :
-#     print(i.group(),i.start(),i.end(),i.span())
+# print(mon_img_list)
+# print(mon_title_list)
 
-str = """I am hungry. I like Pycharm.
-Sample String for RE test :
-abcefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ
-0123456789 _+.,!@#$%^&*()'"
-12345 -99.8.3.14 .69394 5,000 +12 
-"""
-#[0-9]
-pattern1 = re.compile('[0-9]+')
-res = pattern1.findall(str)
-# print(res)
+#전체 리스트
+data = soup.find_all('div',{'class':'col_inner'}) #기둥
+daily_title = []
+daily_img = []
 
-#[a-z]
-pattern2 = re.compile('[a-z]+')
-res = pattern2.findall(str)
-# print(res)
+for i in data :
+    img_tags = i.find_all('img')
+    title_list = []
+    img_list=[]
+    for j in img_tags:
+        title_list.append(j.get('title'))
+        img_list.append(j.get('src'))
+    daily_title.append(title_list)
+    daily_img.append(img_list)
 
-#[A-Z]
-pattern3 = re.compile('[A-Z]+')
-res = pattern3.findall(str)
-# print(res)
+print(daily_title)
+print(daily_img)
 
-#[a-zA-Z]
-pattern4 = re.compile('[a-zA-Z]+')
-res = pattern4.findall(str)
-# print(res)
 
-# \d 숫자
-# mob = "전화번호 070-1111-2222"
-# pattern5 = re.compile('[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]')
-# pattern6 = re.compile('010-[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]')
-# pattern7 = re.compile('070-\d\d\d\d-\d\d\d\d')
-# pattern7 = re.compile('070-\d{4}-\d\d\d\d')
-# res5 = pattern5.findall(mob)
-# res6 = pattern6.findall(mob)
-# res7 = pattern7.findall(mob)
-# print(res7)
+#썸네일 이미지 저장
+from urllib.request import urlretrieve
+import os,errno, re
+#저장할 폴더 생성
+'''
+OS 에서 작업해야할 경우
+파이썬에서 제공하는 OS 패키지 import 하기.
+os.path.isdir : 이미지 디렉토리가 있는지 검사
+os.path.join : 현재 경로를 계산하여 입력으로 들어온
+                텍스트를 합하여 새로운 경로 만듬
+os.makedirs : 경로에 폴더생성
 
-# \w 문자 \d 숫자 {} 반복
-pattern = re.compile('[^a-zA-Z0-9]+')
-print(pattern.findall(str))
+'''
+try:
+    if not (os.path.isdir('image')):
+        os.makedirs(os.path.join('image'))
+except OSError as e:
+    if e.error != errno.EEXIST:
 
-# . : 문자열의 자리표현
-pattern1 = re.compile('t..t')
-print(pattern1.findall(str))
 
-# ? : t?est : test,est
-pattern1 = re.compile('t?est')
-print(pattern1.findall(str))
