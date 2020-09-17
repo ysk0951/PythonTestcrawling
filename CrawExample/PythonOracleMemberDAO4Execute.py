@@ -43,8 +43,8 @@ class PythonOracleMemberDAO:
         slef.con_open()
         id = input('[회원의 아이디를 입력하세요] : ')
         pw = input('[수정할 비밀번호 입력하세요] : ')
-        sql = 'update member set pw=:2 where id = :1'
-        data = (id,pw)
+        sql = 'update member set pw=:1 where id = :2'
+        data = (pw,id)
         slef.cursor.execute(sql, data)
         print("update완료")
         slef.connection.commit()
