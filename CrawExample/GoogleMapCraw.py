@@ -1,6 +1,6 @@
 from selenium import webdriver
 import time
-driver = webdriver.Chrome('chromedriver.exe')
+driver = webdriver.Chrome('Chromedriver.exe')
 driver.get('https://www.google.co.kr/maps')
 time.sleep(3)
 driver.find_element_by_name('q').send_keys('서울대 입구 맛집')

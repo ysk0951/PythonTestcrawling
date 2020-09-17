@@ -83,6 +83,13 @@ print(type(count))
 # connection.commit()
 # connection.close
 
+# 데이터 삭제
+sql = "delete from test where id = :1"
+data = ('py2',)
+cursor.execute(sql,data)
+connection.commit()
+connection.close()
+
 
 
 

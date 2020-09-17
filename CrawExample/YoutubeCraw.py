@@ -7,7 +7,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 #드라이버 경로
-driver = webdriver.Chrome('chromedriver.exe')
+driver = webdriver.Chrome('Chromedriver.exe')
 #webdriver.Ie('IEDriverServer.exe')
 #webdriver.Firefox('FirefoxDriver.exe') 내장형
 
