@@ -1,5 +1,11 @@
-import CrawExample.PythonOracleMemberDAO4Execute
+from CrawExample.PythonOracleMemberDAO4Execute import PythonOracleMemberDAO
 
-dao = CrawExample.PythonOracleMemberDAO4Execute.PythonOracleMemberDAO()
-dao.selectOne()
-print("="*40)
+dao = PythonOracleMemberDAO()
+
+# dao.selectOne()
+# dao.selectAll()
+# dao.selectInsert()
+##dao.selectUpdatePassword()
+# dao.deleteMember()
+# dao.selecIdPw()
+print("="*100)
