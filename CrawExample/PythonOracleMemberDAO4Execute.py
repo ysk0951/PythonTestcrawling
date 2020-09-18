@@ -10,7 +10,7 @@ class PythonOracleMemberDAO:
     def con_close(self):
         self.connection = None
         self.cursor = None
-    # 회원 조회
+    # 회원 조회 
     def selectOne(slef):
         slef.con_open()
         data = (input('[조회할 회원의 아이디를 입력하세요] : '),)
