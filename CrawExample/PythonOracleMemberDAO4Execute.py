@@ -3,7 +3,7 @@ import datetime
 
 class PythonOracleMemberDAO:
     connection = None
-    cursor = None
+    cursor = None 
     def con_open(self):
         self.connection = cx_Oracle.connect("java06/java06@nullmaster.iptime.org:3000/orcl")
         self.cursor = self.connection.cursor()
