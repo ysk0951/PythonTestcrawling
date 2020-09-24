@@ -36,7 +36,7 @@ class PythonOracleMemberDAO:
         sql = 'insert into member values(:1,:2,:3,:4,:5,:6)'
         data = (id,pw,name,datetime.datetime.now(),"python",datetime.datetime.now())
         slef.cursor.execute(sql,data) 
-        slef.connection.commit()
+        slef.connection.commit()  
         slef.con_close()
     # 회원 비번 수정
     def selectUpdatePassword(slef):
