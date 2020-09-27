@@ -3,7 +3,7 @@ import datetime
  
 class PythonOracleMemberDAO:
     connection = None
-    cursor = None
+    cursor = None 
     def con_open(self):
         self.connection = cx_Oracle.connect("java06/java06@nullmaster.iptime.org:3000/orcl")
         self.cursor = self.connection.cursor()
@@ -35,8 +35,8 @@ class PythonOracleMemberDAO:
         name = input('[회원의 이름을 입력하세요] : ')
         sql = 'insert into member values(:1,:2,:3,:4,:5,:6)'
         data = (id,pw,name,datetime.datetime.now(),"python",datetime.datetime.now())
-        slef.cursor.execute(sql,data)
-        slef.connection.commit()
+        slef.cursor.execute(sql,data) 
+        slef.connection.commit()  
         slef.con_close()
     # 회원 비번 수정
     def selectUpdatePassword(slef):
