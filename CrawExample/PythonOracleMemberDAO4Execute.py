@@ -1,6 +1,6 @@
 import cx_Oracle
 import datetime
-
+ 
 class PythonOracleMemberDAO:
     connection = None
     cursor = None
