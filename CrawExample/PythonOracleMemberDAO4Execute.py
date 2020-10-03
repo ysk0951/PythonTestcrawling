@@ -13,7 +13,7 @@ class PythonOracleMemberDAO:
     # 회원 조회
     def selectOne(slef):
         slef.con_open()
-        data = (input('[조회할 회원의 아이디를 입력하세요] : '),)
+        data = (input('[조회할 회원의 아이디를 입력하세요 ] : '),)
         sql = 'select * from member where id = :1'
         slef.cursor.execute(sql,data)
         for c in slef.cursor:
